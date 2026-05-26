@@ -17,7 +17,7 @@ import {
 import * as Haptics from 'expo-haptics';
 import { fetchLeadVisits, runConversionAgent, saveLead } from '../lib/api';
 import type { Lead, Visit } from '../types';
-import { colors, spacing } from '../theme';
+import { colors, fonts, spacing } from '../theme';
 
 const { height: SCREEN_H } = Dimensions.get('window');
 
@@ -309,7 +309,7 @@ const styles = StyleSheet.create({
   headerText: { flex: 1 },
   displayName: { fontSize: 18, fontWeight: '600', color: colors.hi, marginBottom: 2 },
   company: { fontSize: 12, color: colors.muted },
-  email: { fontSize: 11, color: colors.muted, fontFamily: 'SpaceMono' },
+  email: { fontSize: 11, color: colors.muted, fontFamily: fonts.mono },
   statusRow: {
     flexDirection: 'row',
     alignItems: 'center',

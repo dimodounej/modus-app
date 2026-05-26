@@ -2,6 +2,7 @@ import { useState } from 'react';
 import {
   ActivityIndicator,
   Alert,
+  Linking,
   ScrollView,
   StyleSheet,
   Text,
@@ -17,12 +18,14 @@ function SettingRow({
   label,
   description,
   action,
+  onPress,
 }: {
   label: string;
   description?: string;
   action?: React.ReactNode;
+  onPress?: () => void;
 }) {
-  return (
+  const inner = (
     <View style={styles.row}>
       <View style={styles.rowText}>
         <Text style={styles.rowLabel}>{label}</Text>
@@ -31,6 +34,14 @@ function SettingRow({
       {action ? <View style={styles.rowAction}>{action}</View> : null}
     </View>
   );
+  if (onPress) {
+    return (
+      <TouchableOpacity onPress={onPress} activeOpacity={0.65}>
+        {inner}
+      </TouchableOpacity>
+    );
+  }
+  return inner;
 }
 
 function SectionHeader({ title }: { title: string }) {
@@ -88,15 +99,16 @@ export default function SettingsScreen() {
           <View style={styles.divider} />
           <SettingRow
             label="Platform"
-            description="iOS &amp; Android"
+            description="iOS & Android"
           />
         </View>
 
         {/* Data */}
-        <SectionHeader title="Data &amp; Privacy" />
+        <SectionHeader title="Data & Privacy" />
         <View style={styles.card}>
           <SettingRow
             label="Privacy Policy"
+            onPress={() => Linking.openURL('https://blacklinemeridian.com/modus/privacy')}
             action={
               <Text style={styles.link}>View →</Text>
             }
@@ -104,6 +116,7 @@ export default function SettingsScreen() {
           <View style={styles.divider} />
           <SettingRow
             label="Terms of Service"
+            onPress={() => Linking.openURL('https://blacklinemeridian.com/modus/terms')}
             action={
               <Text style={styles.link}>View →</Text>
             }

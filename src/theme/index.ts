@@ -17,7 +17,9 @@ export const colors = {
 } as const;
 
 export const fonts = {
-  mono: 'SpaceMono',  // loaded in _layout.tsx; closest to DM Mono available in Expo
+  // Platform system monospace — no extra font loading step needed.
+  // iOS renders as Courier New, Android as monospace.
+  mono: 'courier' as const,
   sans: undefined,    // system default (SF Pro on iOS, Roboto on Android)
 } as const;
 

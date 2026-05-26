@@ -1,0 +1,40 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='1024' height='1024' viewBox='0 0 1024 1024'>
+  <defs>
+    <linearGradient id='bg' x1='0%' y1='0%' x2='100%' y2='100%'>
+      <stop offset='0%' stop-color='#0f1117'/>
+      <stop offset='100%' stop-color='#161b22'/>
+    </linearGradient>
+    <linearGradient id='accent' x1='0%' y1='0%' x2='100%' y2='0%'>
+      <stop offset='0%' stop-color='#58a6ff'/>
+      <stop offset='100%' stop-color='#3fb950'/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width='1024' height='1024' rx='224' fill='url(#bg)'/>
+
+  <!-- Outer ring -->
+  <circle cx='512' cy='512' r='310' fill='none' stroke='rgba(88,166,255,0.12)' stroke-width='1.5'/>
+
+  <!-- Signal/pulse waveform — the Modus mark -->
+  <!-- Horizontal baseline -->
+  <line x1='240' y1='512' x2='320' y2='512' stroke='url(#accent)' stroke-width='18' stroke-linecap='round'/>
+  <!-- Rising edge -->
+  <line x1='320' y1='512' x2='380' y2='336' stroke='url(#accent)' stroke-width='18' stroke-linecap='round' stroke-linejoin='round'/>
+  <!-- Peak down -->
+  <line x1='380' y1='336' x2='440' y2='688' stroke='url(#accent)' stroke-width='18' stroke-linecap='round' stroke-linejoin='round'/>
+  <!-- Back to mid -->
+  <line x1='440' y1='688' x2='512' y2='512' stroke='url(#accent)' stroke-width='18' stroke-linecap='round' stroke-linejoin='round'/>
+  <!-- Small bump up -->
+  <line x1='512' y1='512' x2='572' y2='400' stroke='url(#accent)' stroke-width='18' stroke-linecap='round' stroke-linejoin='round'/>
+  <!-- Small bump down -->
+  <line x1='572' y1='400' x2='632' y2='624' stroke='url(#accent)' stroke-width='18' stroke-linecap='round' stroke-linejoin='round'/>
+  <!-- Return to baseline -->
+  <line x1='632' y1='624' x2='692' y2='512' stroke='url(#accent)' stroke-width='18' stroke-linecap='round' stroke-linejoin='round'/>
+  <!-- Tail -->
+  <line x1='692' y1='512' x2='784' y2='512' stroke='url(#accent)' stroke-width='18' stroke-linecap='round'/>
+
+  <!-- Glowing dot on the pulse peak -->
+  <circle cx='380' cy='336' r='16' fill='#58a6ff'/>
+  <circle cx='380' cy='336' r='28' fill='rgba(88,166,255,0.18)'/>
+</svg>
